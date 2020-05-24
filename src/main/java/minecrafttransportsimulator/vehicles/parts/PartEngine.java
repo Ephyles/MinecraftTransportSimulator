@@ -358,7 +358,11 @@ public class PartEngine extends APart implements FXPart{
 			if(RPM > startRPM){
 				if(vehicle.fuel > 0 || isCreative){
 					if(!isInLiquid() && state.magnetoOn && !vehicle.world.isRemote){
-						startEngine();
+						if(vehicle.throttle > 0){
+							if(Math.random() < 0.05){
+							startEngine();
+							}
+						}
 					}
 				}
 			}
